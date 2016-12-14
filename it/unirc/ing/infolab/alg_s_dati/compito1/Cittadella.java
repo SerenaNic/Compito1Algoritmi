@@ -51,6 +51,46 @@ public class Cittadella {
         res.add(fa1);
     } 
     return res;
+  }
+  
+  public int m4 (Facolta fa1, Facolta fa2, double l, LinkedList<Facolta> list, int k) {
+    res = 0;
+    UndirectedGraph<Facolta, Tratta> g1 = new UndirectedGraph<Facolta, Tratta> (g);
+    LinkedList<Tratta> tratList=new LinkedList<Tratta>();
+    tratList.addAll(g.getEdges());
+    ListIterator<Tratta> iterator = tratList.listIterator();
+ 
+    while(iterator.hasNext()){
+      Tratta t=iterator.next();
+      if(t.getLunghezza()<l)
+        g1.removeEdge(t);
+    }
+    
+    for(Facolta fa: list)
+      g1.removeVertex(fa);
+    
+    LinkedList<Facolta> faList=new LinkedList<Facolta>();
+    faList.addAll(g1.getVertices());
+    ListIterator<Facolta> iterator2 = faList.listIterator();
+    
+    while(iterator.hasNext()){
+      Facolta fa=iterator2.next();
+      if(fa.getNumCorsiMin5()<k)
+        g1.removeVertex(fa);
+    }
+    
+    Transformer<Tratta, Double> wtTransformer = new Transformer<Tratta,Double>() {
+      public Double transform(Tratta link) {
+        return link.getLunghezza();
+      }
+    };
+    
+    DijkstraDistance<Facolta, Tratta> dd= new DijkstraDistance<Facolta,Tratta>(g1,wtTransformer);
+    Number dist = dd.getDistance(fa1, fa2);
+    res=dist.intValue();
+    
+    return res;
+  }
 }
 
 
