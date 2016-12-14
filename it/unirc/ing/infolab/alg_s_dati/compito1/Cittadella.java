@@ -55,7 +55,7 @@ public class Cittadella {
   
   public int m4 (Facolta fa1, Facolta fa2, double l, LinkedList<Facolta> list, int k) {
     res = 0;
-    UndirectedGraph<Facolta, Tratta> g1 = new UndirectedGraph<Facolta, Tratta> (g);
+    UndirectedGraph<Facolta, Tratta> g1 = g.clone();
     LinkedList<Tratta> tratList=new LinkedList<Tratta>();
     tratList.addAll(g.getEdges());
     ListIterator<Tratta> iterator = tratList.listIterator();
