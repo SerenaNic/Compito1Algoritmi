@@ -20,10 +20,10 @@ public class Cittadella {
       g.addEdge(t, f1, f2);
   }
   
-  public LinkedList<Facoltà> m2(LinkedList<Facoltà> facoltaList, int k, int m){
-    LinkedList<Facoltà> res = new LinkedList<Facoltà>();
+  public LinkedList<Facoltà> m2(LinkedList<Facolta> facoltaList, int k, int m){
+    LinkedList<Facolta> res = new LinkedList<Facolta>();
 
-    for(Facoltà f: g.getVertices()) {
+    for(Facolta f: g.getVertices()) {
       boolean found = false;
       for(Facoltà f2: facoltaList)
         if(fa1.equals(fa2))
