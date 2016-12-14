@@ -34,13 +34,13 @@ public class Cittadella {
     return res;
   }  
   
-  public LinkedList<Facoltà> m3(int k, double v){
+  public LinkedList<Facolta> m3(int k, double v){
   
-    LinkedList<Facoltà> res = new LinkedList<Facoltà>();
+    LinkedList<Facolta> res = new LinkedList<Facolta>();
 
-    for(Facoltà fa1: g.getVertices()){
+    for(Facolta fa1: g.getVertices()){
       int c=0;
-      for(Facoltà fa2:g.getVertices()){
+      for(Facolta fa2:g.getVertices()){
         if(fa2.isDormitorio()&&fa2.getCorsiList().size()>k){
           Tratta t=g.findEdge(fa1, fa2);
           if(t!=null&&t.getLunghezza()<v)
