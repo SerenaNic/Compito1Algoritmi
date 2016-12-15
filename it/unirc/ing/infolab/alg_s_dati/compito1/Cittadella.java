@@ -16,20 +16,22 @@ public class Cittadella {
   }
 
   public void m1(Facolta f1, Facolta f2, Double l) {
-    if(g.findEdge(f1, f2)==null)
+    if(g.findEdge(f1, f2)==null){
+      Tratta t = new Tratta (f1.getCodice()+"-"+f2.getCodice(),l);
       g.addEdge(t, f1, f2);
+    }
   }
   
-  public LinkedList<Facoltà> m2(LinkedList<Facolta> facoltaList, int k, int m){
+  public LinkedList<Facolta> m2(LinkedList<Facolta> list, int k, int m){
     LinkedList<Facolta> res = new LinkedList<Facolta>();
 
     for(Facolta f: g.getVertices()) {
       boolean found = false;
-      for(Facolta f2: facoltaList)
-        if(fa1.equals(fa2))
+      for(Facolta f2: list)
+        if(f.equals(f2))
           found = true;
-      if(!found && fa1.getCostoMantenimento()<k&&fa1.getLivMedioCorsi()>=m)
-        res.add(fa1);
+      if(!found && f.getCostoMantenimento()<k&&f.getLivMedioCorsi()>=m)
+        res.add(f);
     }
     return res;
   }  
