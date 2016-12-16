@@ -15,6 +15,7 @@ public class Cittadella {
     g=new UndirectedSparseGraph<Facolta, Tratta>(); 
   }
 
+  //O(1)
   public void m1(Facolta f1, Facolta f2, Double l) {
     if(g.findEdge(f1, f2)==null){
       Tratta t = new Tratta (f1.getCodice()+"-"+f2.getCodice(),l);
@@ -22,6 +23,7 @@ public class Cittadella {
     }
   }
   
+  //O(n^2)
   public LinkedList<Facolta> m2(LinkedList<Facolta> list, int k, int m){
     LinkedList<Facolta> res = new LinkedList<Facolta>();
 
@@ -36,6 +38,7 @@ public class Cittadella {
     return res;
   }  
   
+  //O(n^2)
   public LinkedList<Facolta> m3(int k, double v){
   
     LinkedList<Facolta> res = new LinkedList<Facolta>();
@@ -55,6 +58,7 @@ public class Cittadella {
     return res;
   }
   
+  //O(n^2)
   public int m4 (Facolta fa1, Facolta fa2, double l, LinkedList<Facolta> list, int k) {
     res = 0;
     UndirectedGraph<Facolta, Tratta> g1 = g.clone();
