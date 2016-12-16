@@ -3,7 +3,7 @@ package it.unirc.ing.infolab.alg_s_dati.compito1;
 import java.util.LinkedList;
 import java.util.ListIterator;
 import org.apache.commons.collections15.Transformer;
-import edu.uci.ics.jung.algorithms.shortestpath.DijkstraDistance;
+import edu.uci.ics.jung.algorithms.shortestpath.DijkstraShortestPath;
 import edu.uci.ics.jung.graph.Graph;
 import edu.uci.ics.jung.graph.UndirectedSparseGraph;
 
@@ -87,7 +87,7 @@ public class Cittadella {
       }
     };
     
-    DijkstraDistance<Facolta, Tratta> dd= new DijkstraDistance<Facolta,Tratta>(g1,wtTransformer);
+    DijkstraShortestPath<Facolta, Tratta> dd= new DijkstraShortestPath<Facolta,Tratta>(g1,wtTransformer);
     Number dist = dd.getDistance(fa1, fa2);
     res=dist.intValue();
     
