@@ -88,9 +88,13 @@ public class Cittadella {
     };
     
     DijkstraShortestPath<Facolta, Tratta> dd= new DijkstraShortestPath<Facolta,Tratta>(g1,wtTransformer);
+    //if distance needed  
     Number dist = dd.getDistance(fa1, fa2);
     res=dist.intValue();
-    
+    /**if edges needed
+    List<Tratta> l = dd.getPath(fa1, fa2);
+    return res.addAll(l);
+    **/
     return res;
   }
 }
